@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC5249C01D40C765001F5182 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5249BF1D40C765001F5182 /* AppDelegate.swift */; };
+		EC5249C21D40C765001F5182 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5249C11D40C765001F5182 /* ViewController.swift */; };
+		EC5249C51D40C765001F5182 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5249C31D40C765001F5182 /* Main.storyboard */; };
+		EC5249C81D40C765001F5182 /* FBMessenger_Programatically.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC5249C61D40C765001F5182 /* FBMessenger_Programatically.xcdatamodeld */; };
+		EC5249CA1D40C765001F5182 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC5249C91D40C765001F5182 /* Assets.xcassets */; };
+		EC5249CD1D40C765001F5182 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5249CB1D40C765001F5182 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EC5249BC1D40C765001F5182 /* FBMessenger_Programatically.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBMessenger_Programatically.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC5249BF1D40C765001F5182 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC5249C11D40C765001F5182 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC5249C41D40C765001F5182 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC5249C71D40C765001F5182 /* FBMessenger_Programatically.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FBMessenger_Programatically.xcdatamodel; sourceTree = "<group>"; };
+		EC5249C91D40C765001F5182 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC5249CC1D40C765001F5182 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC5249CE1D40C765001F5182 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC5249B91D40C765001F5182 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC5249B31D40C765001F5182 = {
+			isa = PBXGroup;
+			children = (
+				EC5249BE1D40C765001F5182 /* FBMessenger_Programatically */,
+				EC5249BD1D40C765001F5182 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC5249BD1D40C765001F5182 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC5249BC1D40C765001F5182 /* FBMessenger_Programatically.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC5249BE1D40C765001F5182 /* FBMessenger_Programatically */ = {
+			isa = PBXGroup;
+			children = (
+				EC5249BF1D40C765001F5182 /* AppDelegate.swift */,
+				EC5249C11D40C765001F5182 /* ViewController.swift */,
+				EC5249C31D40C765001F5182 /* Main.storyboard */,
+				EC5249C91D40C765001F5182 /* Assets.xcassets */,
+				EC5249CB1D40C765001F5182 /* LaunchScreen.storyboard */,
+				EC5249CE1D40C765001F5182 /* Info.plist */,
+				EC5249C61D40C765001F5182 /* FBMessenger_Programatically.xcdatamodeld */,
+			);
+			path = FBMessenger_Programatically;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC5249BB1D40C765001F5182 /* FBMessenger_Programatically */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC5249D11D40C765001F5182 /* Build configuration list for PBXNativeTarget "FBMessenger_Programatically" */;
+			buildPhases = (
+				EC5249B81D40C765001F5182 /* Sources */,
+				EC5249B91D40C765001F5182 /* Frameworks */,
+				EC5249BA1D40C765001F5182 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FBMessenger_Programatically;
+			productName = FBMessenger_Programatically;
+			productReference = EC5249BC1D40C765001F5182 /* FBMessenger_Programatically.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC5249B41D40C765001F5182 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Fernando;
+				TargetAttributes = {
+					EC5249BB1D40C765001F5182 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = ZXBK6BD56X;
+					};
+				};
+			};
+			buildConfigurationList = EC5249B71D40C765001F5182 /* Build configuration list for PBXProject "FBMessenger_Programatically" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC5249B31D40C765001F5182;
+			productRefGroup = EC5249BD1D40C765001F5182 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC5249BB1D40C765001F5182 /* FBMessenger_Programatically */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC5249BA1D40C765001F5182 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC5249CD1D40C765001F5182 /* LaunchScreen.storyboard in Resources */,
+				EC5249CA1D40C765001F5182 /* Assets.xcassets in Resources */,
+				EC5249C51D40C765001F5182 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC5249B81D40C765001F5182 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC5249C81D40C765001F5182 /* FBMessenger_Programatically.xcdatamodeld in Sources */,
+				EC5249C21D40C765001F5182 /* ViewController.swift in Sources */,
+				EC5249C01D40C765001F5182 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EC5249C31D40C765001F5182 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC5249C41D40C765001F5182 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC5249CB1D40C765001F5182 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC5249CC1D40C765001F5182 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC5249CF1D40C765001F5182 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EC5249D01D40C765001F5182 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC5249D21D40C765001F5182 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FBMessenger_Programatically/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fernando.FBMessenger-Programatically";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC5249D31D40C765001F5182 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FBMessenger_Programatically/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fernando.FBMessenger-Programatically";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC5249B71D40C765001F5182 /* Build configuration list for PBXProject "FBMessenger_Programatically" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC5249CF1D40C765001F5182 /* Debug */,
+				EC5249D01D40C765001F5182 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC5249D11D40C765001F5182 /* Build configuration list for PBXNativeTarget "FBMessenger_Programatically" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC5249D21D40C765001F5182 /* Debug */,
+				EC5249D31D40C765001F5182 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EC5249C61D40C765001F5182 /* FBMessenger_Programatically.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EC5249C71D40C765001F5182 /* FBMessenger_Programatically.xcdatamodel */,
+			);
+			currentVersion = EC5249C71D40C765001F5182 /* FBMessenger_Programatically.xcdatamodel */;
+			path = FBMessenger_Programatically.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EC5249B41D40C765001F5182 /* Project object */;
+}
