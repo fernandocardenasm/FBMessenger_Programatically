@@ -38,10 +38,24 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
 
 class FriendCell: BaseCell {
     
-    
+    let profileImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .ScaleAspectFill
+        imageView.backgroundColor = UIColor.yellowColor()
+        imageView.image = UIImage(named: "zuckprofile")
+        imageView.layer.cornerRadius = 34
+        imageView.layer.masksToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
     override func setUpViews() {
         backgroundColor = UIColor.redColor()
+        
+        addSubview(profileImageView)
+        
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-12-[v0(68)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : profileImageView]))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-12-[v0(68)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : profileImageView]))
     }
     
 }
