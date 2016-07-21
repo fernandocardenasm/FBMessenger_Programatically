@@ -62,10 +62,31 @@ class FriendCell: BaseCell {
         addSubview(profileImageView)
         addSubview(dividerLineView)
         
+        setupContainerView()
+        
         addConstraintsWithFormat("H:|-12-[v0(68)]", views: profileImageView)
-        addConstraintsWithFormat("V:|-12-[v0(68)]", views: profileImageView)
+        
+        //Without Centering
+        //addConstraintsWithFormat("V:|-12-[v0(68)]", views: profileImageView)
+        
+        //When Centering is used
+        addConstraintsWithFormat("V:[v0(68)]", views: profileImageView)
+        addConstraint(NSLayoutConstraint(item: profileImageView, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
+        
+        
         addConstraintsWithFormat("H:|-82-[v0]|", views: dividerLineView)
         addConstraintsWithFormat("V:[v0(1)]|", views: dividerLineView)
+    }
+    
+    private func setupContainerView() {
+        let containerView = UIView()
+        containerView.backgroundColor = UIColor.redColor()
+        addSubview(containerView)
+        
+        addConstraintsWithFormat("H:|-90-[v0]|", views: containerView)
+        addConstraintsWithFormat("V:[v0(60)]", views: containerView)
+        
+        addConstraint(NSLayoutConstraint(item: containerView, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
     }
     
 }
