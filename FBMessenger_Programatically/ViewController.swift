@@ -16,7 +16,7 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        collectionView?.backgroundColor = UIColor.blueColor()
+        collectionView?.backgroundColor = UIColor.whiteColor()
         collectionView?.alwaysBounceVertical = true
         collectionView?.registerClass(FriendCell.self, forCellWithReuseIdentifier: cellId)
     }
@@ -41,7 +41,6 @@ class FriendCell: BaseCell {
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .ScaleAspectFill
-        imageView.backgroundColor = UIColor.yellowColor()
         imageView.image = UIImage(named: "zuckprofile")
         imageView.layer.cornerRadius = 34
         imageView.layer.masksToBounds = true
@@ -49,13 +48,23 @@ class FriendCell: BaseCell {
         return imageView
     }()
     
+    let dividerLineView: UIView = {
+       let view = UIView()
+        view.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override func setUpViews() {
-        backgroundColor = UIColor.redColor()
         
         addSubview(profileImageView)
+        addSubview(dividerLineView)
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-12-[v0(68)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : profileImageView]))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-12-[v0(68)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : profileImageView]))
+        
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-82-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : dividerLineView]))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[v0(1)]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : dividerLineView]))
     }
     
 }
