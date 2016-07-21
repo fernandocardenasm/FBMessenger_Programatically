@@ -16,6 +16,8 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        navigationItem.title = "Recent"
+        
         collectionView?.backgroundColor = UIColor.whiteColor()
         collectionView?.alwaysBounceVertical = true
         collectionView?.registerClass(FriendCell.self, forCellWithReuseIdentifier: cellId)
@@ -60,11 +62,10 @@ class FriendCell: BaseCell {
         addSubview(profileImageView)
         addSubview(dividerLineView)
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-12-[v0(68)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : profileImageView]))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-12-[v0(68)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : profileImageView]))
-        
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-82-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : dividerLineView]))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[v0(1)]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : dividerLineView]))
+        addConstraintsWithFormat("H:|-12-[v0(68)]", views: profileImageView)
+        addConstraintsWithFormat("V:|-12-[v0(68)]", views: profileImageView)
+        addConstraintsWithFormat("H:|-82-[v0]|", views: dividerLineView)
+        addConstraintsWithFormat("V:[v0(1)]|", views: dividerLineView)
     }
     
 }
@@ -82,4 +83,20 @@ class BaseCell: UICollectionViewCell {
     func setUpViews() {
         backgroundColor = UIColor.redColor()
     }
+}
+
+extension UIView {
+    
+    func addConstraintsWithFormat(format: String, views: UIView...) {
+        
+        var viewsDictionary = [String: UIView]()
+        for (index, view) in views.enumerate() {
+            let key = "v\(index)"
+            viewsDictionary[key] = view
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
+        
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(format, options: NSLayoutFormatOptions(), metrics: nil, views: viewsDictionary))
+    }
+    
 }
