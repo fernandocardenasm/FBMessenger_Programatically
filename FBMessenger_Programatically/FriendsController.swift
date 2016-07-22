@@ -14,19 +14,6 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
     private let cellId = "cellId"
     
     var messages: [Message]?
-    
-    func setupData(){
-        let mark = Friend()
-        mark.name = "Mark Zuckerberg"
-        mark.profileImageName = "zuckprofile"
-        
-        let message = Message()
-        message.friend = mark
-        message.text = "Hello, my name is Mark. Nice to meet you."
-        message.date = NSDate()
-        
-        messages = [message]
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

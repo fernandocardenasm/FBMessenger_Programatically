@@ -1,5 +1,5 @@
 //
-//  Message.swift
+//  Friend.swift
 //  FBMessenger_Programatically
 //
 //  Created by Fernando Cardenas on 23/07/16.
@@ -9,8 +9,9 @@
 import Foundation
 import CoreData
 
-class Message: NSManagedObject {
-    
-    // Insert code here to add functionality to your managed object subclass
-    
+
+class Friend: NSManagedObject {
+
+// Insert code here to add functionality to your managed object subclass
+
 }

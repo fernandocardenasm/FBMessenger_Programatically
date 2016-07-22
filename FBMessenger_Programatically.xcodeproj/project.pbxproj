@@ -12,10 +12,14 @@
 		EC5249C81D40C765001F5182 /* FBMessenger_Programatically.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC5249C61D40C765001F5182 /* FBMessenger_Programatically.xcdatamodeld */; };
 		EC5249CA1D40C765001F5182 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC5249C91D40C765001F5182 /* Assets.xcassets */; };
 		EC5249CD1D40C765001F5182 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5249CB1D40C765001F5182 /* LaunchScreen.storyboard */; };
-		ECABF51E1D42C37E00291007 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF51D1D42C37E00291007 /* Message.swift */; };
 		ECABF5221D42C4E000291007 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF5211D42C4E000291007 /* Extensions.swift */; };
 		ECABF5251D42C52A00291007 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF5241D42C52A00291007 /* BaseCell.swift */; };
 		ECABF5271D42C55B00291007 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF5261D42C55B00291007 /* MessageCell.swift */; };
+		ECABF5291D42CC3000291007 /* FriendsControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF5281D42CC3000291007 /* FriendsControllerHelper.swift */; };
+		ECABF52D1D42CF3C00291007 /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF52A1D42CF3C00291007 /* Friend+CoreDataProperties.swift */; };
+		ECABF52E1D42CF3C00291007 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF52B1D42CF3C00291007 /* Friend.swift */; };
+		ECABF52F1D42CF3C00291007 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF52C1D42CF3C00291007 /* Message+CoreDataProperties.swift */; };
+		ECABF5311D42D08400291007 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF5301D42D08400291007 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +30,14 @@
 		EC5249C91D40C765001F5182 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC5249CC1D40C765001F5182 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC5249CE1D40C765001F5182 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ECABF51D1D42C37E00291007 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		ECABF5211D42C4E000291007 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ECABF5241D42C52A00291007 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		ECABF5261D42C55B00291007 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		ECABF5281D42CC3000291007 /* FriendsControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsControllerHelper.swift; sourceTree = "<group>"; };
+		ECABF52A1D42CF3C00291007 /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ECABF52B1D42CF3C00291007 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		ECABF52C1D42CF3C00291007 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ECABF5301D42D08400291007 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,10 @@
 				EC5249CB1D40C765001F5182 /* LaunchScreen.storyboard */,
 				EC5249CE1D40C765001F5182 /* Info.plist */,
 				EC5249C61D40C765001F5182 /* FBMessenger_Programatically.xcdatamodeld */,
+				ECABF52A1D42CF3C00291007 /* Friend+CoreDataProperties.swift */,
+				ECABF52B1D42CF3C00291007 /* Friend.swift */,
+				ECABF52C1D42CF3C00291007 /* Message+CoreDataProperties.swift */,
+				ECABF5301D42D08400291007 /* Message.swift */,
 			);
 			path = FBMessenger_Programatically;
 			sourceTree = "<group>";
@@ -78,7 +90,6 @@
 		ECABF51C1D42C36000291007 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ECABF51D1D42C37E00291007 /* Message.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -95,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				ECABF5211D42C4E000291007 /* Extensions.swift */,
+				ECABF5281D42CC3000291007 /* FriendsControllerHelper.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -179,13 +191,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECABF52F1D42CF3C00291007 /* Message+CoreDataProperties.swift in Sources */,
 				ECABF5271D42C55B00291007 /* MessageCell.swift in Sources */,
 				ECABF5221D42C4E000291007 /* Extensions.swift in Sources */,
+				ECABF52D1D42CF3C00291007 /* Friend+CoreDataProperties.swift in Sources */,
 				EC5249C81D40C765001F5182 /* FBMessenger_Programatically.xcdatamodeld in Sources */,
-				ECABF51E1D42C37E00291007 /* Message.swift in Sources */,
 				EC5249C21D40C765001F5182 /* FriendsController.swift in Sources */,
+				ECABF5311D42D08400291007 /* Message.swift in Sources */,
 				ECABF5251D42C52A00291007 /* BaseCell.swift in Sources */,
+				ECABF52E1D42CF3C00291007 /* Friend.swift in Sources */,
 				EC5249C01D40C765001F5182 /* AppDelegate.swift in Sources */,
+				ECABF5291D42CC3000291007 /* FriendsControllerHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
