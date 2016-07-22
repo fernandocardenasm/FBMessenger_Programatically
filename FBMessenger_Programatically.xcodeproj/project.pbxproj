@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		EC5249C01D40C765001F5182 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5249BF1D40C765001F5182 /* AppDelegate.swift */; };
-		EC5249C21D40C765001F5182 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5249C11D40C765001F5182 /* ViewController.swift */; };
+		EC5249C21D40C765001F5182 /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5249C11D40C765001F5182 /* FriendsController.swift */; };
 		EC5249C81D40C765001F5182 /* FBMessenger_Programatically.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC5249C61D40C765001F5182 /* FBMessenger_Programatically.xcdatamodeld */; };
 		EC5249CA1D40C765001F5182 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC5249C91D40C765001F5182 /* Assets.xcassets */; };
 		EC5249CD1D40C765001F5182 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5249CB1D40C765001F5182 /* LaunchScreen.storyboard */; };
+		ECABF51E1D42C37E00291007 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF51D1D42C37E00291007 /* Message.swift */; };
+		ECABF5221D42C4E000291007 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF5211D42C4E000291007 /* Extensions.swift */; };
+		ECABF5251D42C52A00291007 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF5241D42C52A00291007 /* BaseCell.swift */; };
+		ECABF5271D42C55B00291007 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF5261D42C55B00291007 /* FriendCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EC5249BC1D40C765001F5182 /* FBMessenger_Programatically.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBMessenger_Programatically.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC5249BF1D40C765001F5182 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EC5249C11D40C765001F5182 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC5249C11D40C765001F5182 /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
 		EC5249C71D40C765001F5182 /* FBMessenger_Programatically.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FBMessenger_Programatically.xcdatamodel; sourceTree = "<group>"; };
 		EC5249C91D40C765001F5182 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC5249CC1D40C765001F5182 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC5249CE1D40C765001F5182 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECABF51D1D42C37E00291007 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		ECABF5211D42C4E000291007 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ECABF5241D42C52A00291007 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		ECABF5261D42C55B00291007 /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,50 @@
 		EC5249BE1D40C765001F5182 /* FBMessenger_Programatically */ = {
 			isa = PBXGroup;
 			children = (
+				ECABF51C1D42C36000291007 /* Model */,
+				ECABF5231D42C51500291007 /* View */,
+				ECABF51F1D42C4A600291007 /* Controller */,
+				ECABF5201D42C4CB00291007 /* Extension */,
 				EC5249BF1D40C765001F5182 /* AppDelegate.swift */,
-				EC5249C11D40C765001F5182 /* ViewController.swift */,
 				EC5249C91D40C765001F5182 /* Assets.xcassets */,
 				EC5249CB1D40C765001F5182 /* LaunchScreen.storyboard */,
 				EC5249CE1D40C765001F5182 /* Info.plist */,
 				EC5249C61D40C765001F5182 /* FBMessenger_Programatically.xcdatamodeld */,
 			);
 			path = FBMessenger_Programatically;
+			sourceTree = "<group>";
+		};
+		ECABF51C1D42C36000291007 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECABF51D1D42C37E00291007 /* Message.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		ECABF51F1D42C4A600291007 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC5249C11D40C765001F5182 /* FriendsController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		ECABF5201D42C4CB00291007 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ECABF5211D42C4E000291007 /* Extensions.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		ECABF5231D42C51500291007 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ECABF5241D42C52A00291007 /* BaseCell.swift */,
+				ECABF5261D42C55B00291007 /* FriendCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECABF5271D42C55B00291007 /* FriendCell.swift in Sources */,
+				ECABF5221D42C4E000291007 /* Extensions.swift in Sources */,
 				EC5249C81D40C765001F5182 /* FBMessenger_Programatically.xcdatamodeld in Sources */,
-				EC5249C21D40C765001F5182 /* ViewController.swift in Sources */,
+				ECABF51E1D42C37E00291007 /* Message.swift in Sources */,
+				EC5249C21D40C765001F5182 /* FriendsController.swift in Sources */,
+				ECABF5251D42C52A00291007 /* BaseCell.swift in Sources */,
 				EC5249C01D40C765001F5182 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +327,7 @@
 				EC5249D31D40C765001F5182 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
