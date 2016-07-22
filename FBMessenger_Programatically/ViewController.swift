@@ -57,6 +57,39 @@ class FriendCell: BaseCell {
         return view
     }()
     
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Mark Zuckerberg"
+        label.font = UIFont.systemFontOfSize(18)
+        return label
+    }()
+    
+    let messageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Your Friend´s message and something else..."
+        label.textColor = UIColor.darkGrayColor()
+        label.font = UIFont.systemFontOfSize(14)
+        return label
+    }()
+    
+    let timeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "12:05 pm"
+        label.font = UIFont.systemFontOfSize(16)
+        label.textAlignment = .Right
+        return label
+    }()
+    
+    let hasRedImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .ScaleAspectFill
+        imageView.image = UIImage(named: "zuckprofile")
+        imageView.layer.cornerRadius = 10
+        imageView.layer.masksToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     override func setUpViews() {
         
         addSubview(profileImageView)
@@ -80,13 +113,25 @@ class FriendCell: BaseCell {
     
     private func setupContainerView() {
         let containerView = UIView()
-        containerView.backgroundColor = UIColor.redColor()
         addSubview(containerView)
         
         addConstraintsWithFormat("H:|-90-[v0]|", views: containerView)
-        addConstraintsWithFormat("V:[v0(60)]", views: containerView)
+        addConstraintsWithFormat("V:[v0(50)]", views: containerView)
         
         addConstraint(NSLayoutConstraint(item: containerView, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
+        
+        containerView.addSubview(nameLabel)
+        containerView.addSubview(messageLabel)
+        containerView.addSubview(timeLabel)
+        containerView.addSubview(hasRedImageView)
+        
+        containerView.addConstraintsWithFormat("H:|[v0][v1(80)]-12-|", views: nameLabel, timeLabel)
+        containerView.addConstraintsWithFormat("V:|[v0][v1(24)]|", views: nameLabel, messageLabel)
+        containerView.addConstraintsWithFormat("H:|[v0]-8-[v1(20)]-12-|", views: messageLabel, hasRedImageView)
+        containerView.addConstraintsWithFormat("V:|[v0(24)]", views: timeLabel)
+        containerView.addConstraintsWithFormat("V:[v0(20)]|", views: hasRedImageView)
+
+
     }
     
 }
