@@ -12,6 +12,21 @@ import UIKit
 class FriendsController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     private let cellId = "cellId"
+    
+    var messages: [Message]?
+    
+    func setupData(){
+        let mark = Friend()
+        mark.name = "Mark Zuckerberg"
+        mark.profileImageName = "zuckprofile"
+        
+        let message = Message()
+        message.friend = mark
+        message.text = "Hello, my name is Mark. Nice to meet you."
+        message.date = NSDate()
+        
+        messages = [message]
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,15 +35,25 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
         
         collectionView?.backgroundColor = UIColor.whiteColor()
         collectionView?.alwaysBounceVertical = true
-        collectionView?.registerClass(FriendCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView?.registerClass(MessageCell.self, forCellWithReuseIdentifier: cellId)
+        
+        setupData()
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        if let count = messages?.count {
+            return count
+        }
+        return 0
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as! MessageCell
+        
+        if let message = messages?[indexPath.item] {
+            cell.message = message
+        }
+        
         return cell
     }
     

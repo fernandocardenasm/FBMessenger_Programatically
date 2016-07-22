@@ -15,7 +15,7 @@
 		ECABF51E1D42C37E00291007 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF51D1D42C37E00291007 /* Message.swift */; };
 		ECABF5221D42C4E000291007 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF5211D42C4E000291007 /* Extensions.swift */; };
 		ECABF5251D42C52A00291007 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF5241D42C52A00291007 /* BaseCell.swift */; };
-		ECABF5271D42C55B00291007 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF5261D42C55B00291007 /* FriendCell.swift */; };
+		ECABF5271D42C55B00291007 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF5261D42C55B00291007 /* MessageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		ECABF51D1D42C37E00291007 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		ECABF5211D42C4E000291007 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ECABF5241D42C52A00291007 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
-		ECABF5261D42C55B00291007 /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		ECABF5261D42C55B00291007 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				ECABF5241D42C52A00291007 /* BaseCell.swift */,
-				ECABF5261D42C55B00291007 /* FriendCell.swift */,
+				ECABF5261D42C55B00291007 /* MessageCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -179,7 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECABF5271D42C55B00291007 /* FriendCell.swift in Sources */,
+				ECABF5271D42C55B00291007 /* MessageCell.swift in Sources */,
 				ECABF5221D42C4E000291007 /* Extensions.swift in Sources */,
 				EC5249C81D40C765001F5182 /* FBMessenger_Programatically.xcdatamodeld in Sources */,
 				ECABF51E1D42C37E00291007 /* Message.swift in Sources */,
