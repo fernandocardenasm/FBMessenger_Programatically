@@ -16,6 +16,7 @@ class MessageCell: BaseCell {
             
             if let profileImageName = message?.friend?.profileImageName {
                 profileImageView.image = UIImage(named: profileImageName)
+                hasRedImageView.image = UIImage(named: profileImageName)
             }
             
             messageLabel.text = message?.text
