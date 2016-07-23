@@ -32,6 +32,12 @@ extension FriendsController {
             
             createMessageWithText("What product would you like to buy.", friend: steve, minutesAgo: 0, context: context)
             
+            let donald = NSEntityDescription.insertNewObjectForEntityForName("Friend", inManagedObjectContext: context) as! Friend
+            donald.name = "Donald Trump"
+            donald.profileImageName = "donald_trump_profile"
+            
+            createMessageWithText("You're fired", friend: donald, minutesAgo: 5, context: context)
+
             
             do {
                 try(context.save())
@@ -76,6 +82,8 @@ extension FriendsController {
                         print(err)
                     }
                 }
+                
+                messages = messages?.sort({$0.date!.compare($1.date!) == .OrderedDescending})
             }
             
         }
