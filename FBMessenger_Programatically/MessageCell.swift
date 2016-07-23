@@ -36,14 +36,12 @@ class MessageCell: BaseCell {
         imageView.image = UIImage(named: "zuckprofile")
         imageView.layer.cornerRadius = 34
         imageView.layer.masksToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     let dividerLineView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -76,7 +74,6 @@ class MessageCell: BaseCell {
         imageView.image = UIImage(named: "zuckprofile")
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
