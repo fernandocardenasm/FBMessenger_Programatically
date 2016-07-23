@@ -20,6 +20,7 @@
 		ECABF52E1D42CF3C00291007 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF52B1D42CF3C00291007 /* Friend.swift */; };
 		ECABF52F1D42CF3C00291007 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF52C1D42CF3C00291007 /* Message+CoreDataProperties.swift */; };
 		ECABF5311D42D08400291007 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF5301D42D08400291007 /* Message.swift */; };
+		ECD22D271D43916C00D098FE /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD22D261D43916C00D098FE /* ChatLogController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		ECABF52B1D42CF3C00291007 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		ECABF52C1D42CF3C00291007 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ECABF5301D42D08400291007 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		ECD22D261D43916C00D098FE /* ChatLogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				EC5249C11D40C765001F5182 /* FriendsController.swift */,
+				ECD22D261D43916C00D098FE /* ChatLogController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECD22D271D43916C00D098FE /* ChatLogController.swift in Sources */,
 				ECABF52F1D42CF3C00291007 /* Message+CoreDataProperties.swift in Sources */,
 				ECABF5271D42C55B00291007 /* MessageCell.swift in Sources */,
 				ECABF5221D42C4E000291007 /* Extensions.swift in Sources */,
