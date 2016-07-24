@@ -16,7 +16,7 @@ class MessageCell: BaseCell {
             
             if let profileImageName = message?.friend?.profileImageName {
                 profileImageView.image = UIImage(named: profileImageName)
-                hasRedImageView.image = UIImage(named: profileImageName)
+                hasReadImageView.image = UIImage(named: profileImageName)
             }
             
             messageLabel.text = message?.text
@@ -68,7 +68,7 @@ class MessageCell: BaseCell {
         return label
     }()
     
-    let hasRedImageView: UIImageView = {
+    let hasReadImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .ScaleAspectFill
         imageView.image = UIImage(named: "zuckprofile")
@@ -85,17 +85,18 @@ class MessageCell: BaseCell {
         setupContainerView()
         
         addConstraintsWithFormat("H:|-12-[v0(68)]", views: profileImageView)
+        addConstraintsWithFormat("V:[v0(68)]", views: profileImageView)
+        
+        addConstraint(NSLayoutConstraint(item: profileImageView, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
+        
+        addConstraintsWithFormat("H:|-82-[v0]|", views: dividerLineView)
+        addConstraintsWithFormat("V:[v0(1)]|", views: dividerLineView)
         
         //Without Centering
         //addConstraintsWithFormat("V:|-12-[v0(68)]", views: profileImageView)
         
         //When Centering is used
-        addConstraintsWithFormat("V:[v0(68)]", views: profileImageView)
-        addConstraint(NSLayoutConstraint(item: profileImageView, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
-        
-        
-        addConstraintsWithFormat("H:|-82-[v0]|", views: dividerLineView)
-        addConstraintsWithFormat("V:[v0(1)]|", views: dividerLineView)
+        //addConstraintsWithFormat("V:[v0(68)]", views: profileImageView)
     }
     
     private func setupContainerView() {
@@ -104,19 +105,22 @@ class MessageCell: BaseCell {
         
         addConstraintsWithFormat("H:|-90-[v0]|", views: containerView)
         addConstraintsWithFormat("V:[v0(50)]", views: containerView)
-        
         addConstraint(NSLayoutConstraint(item: containerView, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
         
         containerView.addSubview(nameLabel)
         containerView.addSubview(messageLabel)
         containerView.addSubview(timeLabel)
-        containerView.addSubview(hasRedImageView)
+        containerView.addSubview(hasReadImageView)
         
         containerView.addConstraintsWithFormat("H:|[v0][v1(80)]-12-|", views: nameLabel, timeLabel)
+        
         containerView.addConstraintsWithFormat("V:|[v0][v1(24)]|", views: nameLabel, messageLabel)
-        containerView.addConstraintsWithFormat("H:|[v0]-8-[v1(20)]-12-|", views: messageLabel, hasRedImageView)
+        
+        containerView.addConstraintsWithFormat("H:|[v0]-8-[v1(20)]-12-|", views: messageLabel, hasReadImageView)
+        
         containerView.addConstraintsWithFormat("V:|[v0(24)]", views: timeLabel)
-        containerView.addConstraintsWithFormat("V:[v0(20)]|", views: hasRedImageView)
+        
+        containerView.addConstraintsWithFormat("V:[v0(20)]|", views: hasReadImageView)
         
         
     }
