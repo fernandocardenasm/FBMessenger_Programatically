@@ -30,6 +30,16 @@ class MessageCell: BaseCell {
         }
     }
     
+    override var highlighted: Bool {
+        didSet {
+            backgroundColor = highlighted ? UIColor.rgb(0, green: 134, blue: 249) : UIColor.whiteColor()
+            nameLabel.textColor = highlighted ? UIColor.whiteColor() : UIColor.blackColor()
+            timeLabel.textColor = highlighted ? UIColor.whiteColor() : UIColor.blackColor()
+            messageLabel.textColor = highlighted ? UIColor.whiteColor() : UIColor.blackColor()
+
+        }
+    }
+    
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .ScaleAspectFill
