@@ -43,19 +43,18 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         
         cell.messageTextView.text = messages?[indexPath.item].text
         
-        if let messageText = messages?[indexPath.item].text {
+        if let messageText = messages?[indexPath.item].text, profileImageName =  messages?[indexPath.item].friend?.profileImageName{
             
+            cell.profileImageView.image = UIImage(named: profileImageName)
             //let size = CGSizeMake(view.frame.width, 1000)
             let size = CGSizeMake(250, 1000)
             let options = NSStringDrawingOptions.UsesFontLeading.union(.UsesLineFragmentOrigin)
             let estimatedFrame = NSString(string: messageText).boundingRectWithSize(size, options: options, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(18)], context: nil)
             
-            cell.messageTextView.frame = CGRectMake(8, 0, estimatedFrame.width + 16, estimatedFrame.height + 20)
-            cell.textBubbleView.frame = CGRectMake(0, 0, estimatedFrame.width + 16 + 8, estimatedFrame.height + 20)
+            cell.messageTextView.frame = CGRectMake(48 + 8, 0, estimatedFrame.width + 16, estimatedFrame.height + 20)
+            cell.textBubbleView.frame = CGRectMake(48, 0, estimatedFrame.width + 16 + 8, estimatedFrame.height + 20)
 
         }
-        
-        
         
         return cell
     }
@@ -74,6 +73,10 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         
         return CGSizeMake(view.frame.width, 100)
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(8, 0, 0, 0)
+    }
 }
 
 class ChatLogMessageCell: BaseCell {
@@ -90,9 +93,17 @@ class ChatLogMessageCell: BaseCell {
     let textBubbleView: UIView = {
        let view = UIView()
         view.backgroundColor = UIColor(white: 0.95, alpha: 1)
-        //view.layer.cornerRadius = 15
-        //view.layer.masksToBounds = true
+        view.layer.cornerRadius = 15
+        view.layer.masksToBounds = true
         return view
+    }()
+    
+    let profileImageView: UIImageView = {
+       let imageView = UIImageView()
+        imageView.contentMode = .ScaleAspectFill
+        imageView.layer.cornerRadius = 15
+        imageView.layer.masksToBounds = true
+        return imageView
     }()
     
     override func setUpViews() {
@@ -101,6 +112,14 @@ class ChatLogMessageCell: BaseCell {
         backgroundColor = UIColor.clearColor()
         addSubview(textBubbleView)
         addSubview(messageTextView)
+        addSubview(profileImageView)
+        
+        addConstraintsWithFormat("H:|-8-[v0(30)]", views: profileImageView)
+        addConstraintsWithFormat("V:[v0(30)]|", views: profileImageView)
+        
+        profileImageView.backgroundColor = UIColor.redColor()
+        
+        //Initial constraints for the cells
         /*
         addConstraintsWithFormat("H:|[v0]|", views: messageTextView)
         addConstraintsWithFormat("V:|[v0]|", views: messageTextView)
