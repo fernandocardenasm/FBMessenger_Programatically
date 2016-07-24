@@ -50,7 +50,9 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
             let options = NSStringDrawingOptions.UsesFontLeading.union(.UsesLineFragmentOrigin)
             let estimatedFrame = NSString(string: messageText).boundingRectWithSize(size, options: options, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(18)], context: nil)
             
-            cell.messageTextView.frame = CGRectMake(0, 0, 250, estimatedFrame.height + 20)
+            cell.messageTextView.frame = CGRectMake(8, 0, estimatedFrame.width + 16, estimatedFrame.height + 20)
+            cell.textBubbleView.frame = CGRectMake(0, 0, estimatedFrame.width + 16 + 8, estimatedFrame.height + 20)
+
         }
         
         
@@ -85,10 +87,19 @@ class ChatLogMessageCell: BaseCell {
         
     }()
     
+    let textBubbleView: UIView = {
+       let view = UIView()
+        view.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        //view.layer.cornerRadius = 15
+        //view.layer.masksToBounds = true
+        return view
+    }()
+    
     override func setUpViews() {
         super.setUpViews()
         
-        backgroundColor = UIColor.lightGrayColor()
+        backgroundColor = UIColor.clearColor()
+        addSubview(textBubbleView)
         addSubview(messageTextView)
         /*
         addConstraintsWithFormat("H:|[v0]|", views: messageTextView)
