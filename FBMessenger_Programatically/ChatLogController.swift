@@ -69,11 +69,20 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     private func setupInputComponents() {
+        
+        let topBorderView = UIView()
+        topBorderView.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
+        
         messageInputContainerView.addSubview(inputTextField)
         messageInputContainerView.addSubview(sendButton)
-        view.addConstraintsWithFormat("H:|-8-[v0][v1(60)]|", views: inputTextField, sendButton)
-        view.addConstraintsWithFormat("V:|[v0]|", views: inputTextField)
-        view.addConstraintsWithFormat("V:|[v0]|", views: sendButton)
+        messageInputContainerView.addSubview(topBorderView)
+        
+        messageInputContainerView.addConstraintsWithFormat("H:|-8-[v0][v1(60)]|", views: inputTextField, sendButton)
+        messageInputContainerView.addConstraintsWithFormat("V:|[v0]|", views: inputTextField)
+        messageInputContainerView.addConstraintsWithFormat("V:|[v0]|", views: sendButton)
+        
+        messageInputContainerView.addConstraintsWithFormat("H:|[v0]|", views: topBorderView)
+        messageInputContainerView.addConstraintsWithFormat("V:|[v0(0.5)]", views: topBorderView)
 
     }
     
@@ -89,6 +98,11 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
             UIView.animateWithDuration(0, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
                 self.view.layoutIfNeeded()
                 }, completion: { (completed) in
+                    
+                    if isKeyBoardShowing {
+                        let indexPath = NSIndexPath(forItem: self.messages!.count - 1, inSection: 0)
+                        self.collectionView?.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: .Bottom)
+                    }
             })
         }
     }
@@ -153,6 +167,7 @@ class ChatLogMessageCell: BaseCell {
         let textView = UITextView()
         textView.font = UIFont.systemFontOfSize(18)
         textView.text = "Sample Message"
+        textView.editable = false
         textView.backgroundColor = UIColor.clearColor()
         return textView
         
