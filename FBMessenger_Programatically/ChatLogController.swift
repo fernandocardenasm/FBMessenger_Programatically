@@ -35,6 +35,15 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         return textField
     }()
     
+    let sendButton: UIButton = {
+        let button = UIButton(type: .System)
+        button.setTitle("Send", forState: .Normal)
+        let titleColor = UIColor.rgb(0, green: 139, blue: 249)
+        button.setTitleColor(titleColor, forState: .Normal)
+        button.titleLabel?.font = UIFont.boldSystemFontOfSize(16)
+        return button
+    }()
+    
     var bottomConstraint: NSLayoutConstraint?
     
     override func viewDidLoad() {
@@ -61,8 +70,10 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     
     private func setupInputComponents() {
         messageInputContainerView.addSubview(inputTextField)
-        view.addConstraintsWithFormat("H:|-8-[v0]|", views: inputTextField)
+        messageInputContainerView.addSubview(sendButton)
+        view.addConstraintsWithFormat("H:|-8-[v0][v1(60)]|", views: inputTextField, sendButton)
         view.addConstraintsWithFormat("V:|[v0]|", views: inputTextField)
+        view.addConstraintsWithFormat("V:|[v0]|", views: sendButton)
 
     }
     
