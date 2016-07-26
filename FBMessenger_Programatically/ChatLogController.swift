@@ -25,7 +25,7 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     
     let messageInputContainerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.lightGrayColor()
+        view.backgroundColor = UIColor.whiteColor()
         return view
     }()
     
@@ -55,6 +55,8 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         setupInputComponents()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleKeyBoardNotification), name: UIKeyboardWillShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleKeyBoardNotification), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     private func setupInputComponents() {
@@ -68,8 +70,20 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         if let userInfo = notification.userInfo {
             
             let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue()
-            bottomConstraint?.constant = -keyboardFrame!.height
+            
+            let isKeyBoardShowing = notification.name == UIKeyboardWillShowNotification
+            
+            bottomConstraint?.constant = isKeyBoardShowing ? -keyboardFrame!.height : 0
+            
+            UIView.animateWithDuration(0, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+                self.view.layoutIfNeeded()
+                }, completion: { (completed) in
+            })
         }
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        inputTextField.endEditing(true)
     }
     
     
