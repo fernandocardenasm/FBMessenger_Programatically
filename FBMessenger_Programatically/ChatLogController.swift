@@ -145,6 +145,7 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
                 cell.profileImageView.hidden = false
                 
                 cell.textBubbleView.backgroundColor = UIColor(white: 0.95, alpha: 1)
+                cell.messageTextView.textColor = UIColor.blackColor()
             }
             else {
                 cell.messageTextView.frame = CGRectMake(view.frame.width - estimatedFrame.width - 16 - 16, 0, estimatedFrame.width + 16, estimatedFrame.height + 20)
@@ -153,6 +154,7 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
                 cell.profileImageView.hidden = true
                 
                 cell.textBubbleView.backgroundColor = UIColor.rgb(0, green: 137, blue: 249)
+                cell.messageTextView.textColor = UIColor.whiteColor()
             }
 
         }
