@@ -139,24 +139,27 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
             let options = NSStringDrawingOptions.UsesFontLeading.union(.UsesLineFragmentOrigin)
             let estimatedFrame = NSString(string: messageText).boundingRectWithSize(size, options: options, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(18)], context: nil)
             
-            if !message.isSender!.boolValue {
-                cell.messageTextView.frame = CGRectMake(48 + 8, 0, estimatedFrame.width + 16, estimatedFrame.height + 20)
-                cell.textBubbleView.frame = CGRectMake(48 - 10, -4, estimatedFrame.width + 16 + 8 + 16, estimatedFrame.height + 20 + 6)
-                cell.profileImageView.hidden = false
+            if let bool = message.isSender?.boolValue {
+                if !bool {
+                    cell.messageTextView.frame = CGRectMake(48 + 8, 0, estimatedFrame.width + 16, estimatedFrame.height + 20)
+                    cell.textBubbleView.frame = CGRectMake(48 - 10, -4, estimatedFrame.width + 16 + 8 + 16, estimatedFrame.height + 20 + 6)
+                    cell.profileImageView.hidden = false
+                    
+                    cell.bubbleImageView.image = ChatLogMessageCell.grayBubbleImage
+                    cell.bubbleImageView.tintColor = UIColor(white: 0.95, alpha: 1)
+                    cell.messageTextView.textColor = UIColor.blackColor()
+                }
+                else {
+                    cell.messageTextView.frame = CGRectMake(view.frame.width - estimatedFrame.width - 16 - 16 - 8, 0, estimatedFrame.width + 16, estimatedFrame.height + 20)
+                    cell.textBubbleView.frame = CGRectMake(view.frame.width - estimatedFrame.width - 16 - 8 - 16 - 10, -4, estimatedFrame.width + 16 + 8 + 10, estimatedFrame.height + 20 + 6)
+                    
+                    cell.profileImageView.hidden = true
+                    
+                    cell.bubbleImageView.image = ChatLogMessageCell.blueBubbleImage
+                    cell.bubbleImageView.tintColor = UIColor.rgb(0, green: 137, blue: 249)
+                    cell.messageTextView.textColor = UIColor.whiteColor()
+                }
                 
-                cell.bubbleImageView.image = ChatLogMessageCell.grayBubbleImage
-                cell.bubbleImageView.tintColor = UIColor(white: 0.95, alpha: 1)
-                cell.messageTextView.textColor = UIColor.blackColor()
-            }
-            else {
-                cell.messageTextView.frame = CGRectMake(view.frame.width - estimatedFrame.width - 16 - 16 - 8, 0, estimatedFrame.width + 16, estimatedFrame.height + 20)
-                cell.textBubbleView.frame = CGRectMake(view.frame.width - estimatedFrame.width - 16 - 8 - 16 - 10, -4, estimatedFrame.width + 16 + 8 + 10, estimatedFrame.height + 20 + 6)
-                
-                cell.profileImageView.hidden = true
-                
-                cell.bubbleImageView.image = ChatLogMessageCell.blueBubbleImage
-                cell.bubbleImageView.tintColor = UIColor.rgb(0, green: 137, blue: 249)
-                cell.messageTextView.textColor = UIColor.whiteColor()
             }
 
         }
