@@ -73,10 +73,15 @@ extension FriendsController {
         
         createMessageWithText("Apple creates great iOS Devices for the world. I hope you are doing great.", friend: steve, minutesAgo: 1, context: context)
         
+        //Response Message
+        createMessageWithText("Best products in the market.", friend: steve, minutesAgo: 0, context: context, isSender: true)
+        
         createMessageWithText("What product would you like to buy. We have a wide range of Apple Devices that will suit your needs. Pleae make your purchase with us.", friend: steve, minutesAgo: 0, context: context)
         
         //Response Message
         createMessageWithText("Yes. I´m very interested.", friend: steve, minutesAgo: 0, context: context, isSender: true)
+        
+        createMessageWithText("I will buy the new Iphone 6. I´m still getting the money to buy. It is quite expensive for me.", friend: steve, minutesAgo: 0, context: context, isSender: true)
     }
     
     func createMessageWithText(text: String, friend: Friend, minutesAgo: Double, context: NSManagedObjectContext, isSender: Bool = false){

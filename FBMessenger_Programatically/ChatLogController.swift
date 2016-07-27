@@ -141,19 +141,21 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
             
             if !message.isSender!.boolValue {
                 cell.messageTextView.frame = CGRectMake(48 + 8, 0, estimatedFrame.width + 16, estimatedFrame.height + 20)
-                cell.textBubbleView.frame = CGRectMake(48, 0, estimatedFrame.width + 16 + 8, estimatedFrame.height + 20)
+                cell.textBubbleView.frame = CGRectMake(48 - 10, -4, estimatedFrame.width + 16 + 8 + 16, estimatedFrame.height + 20 + 6)
                 cell.profileImageView.hidden = false
                 
-                cell.textBubbleView.backgroundColor = UIColor(white: 0.95, alpha: 1)
+                cell.bubbleImageView.image = ChatLogMessageCell.grayBubbleImage
+                cell.bubbleImageView.tintColor = UIColor(white: 0.95, alpha: 1)
                 cell.messageTextView.textColor = UIColor.blackColor()
             }
             else {
-                cell.messageTextView.frame = CGRectMake(view.frame.width - estimatedFrame.width - 16 - 16, 0, estimatedFrame.width + 16, estimatedFrame.height + 20)
-                cell.textBubbleView.frame = CGRectMake(view.frame.width - estimatedFrame.width - 16 - 8 - 16, 0, estimatedFrame.width + 16 + 8, estimatedFrame.height + 20)
+                cell.messageTextView.frame = CGRectMake(view.frame.width - estimatedFrame.width - 16 - 16 - 8, 0, estimatedFrame.width + 16, estimatedFrame.height + 20)
+                cell.textBubbleView.frame = CGRectMake(view.frame.width - estimatedFrame.width - 16 - 8 - 16 - 10, -4, estimatedFrame.width + 16 + 8 + 10, estimatedFrame.height + 20 + 6)
                 
                 cell.profileImageView.hidden = true
                 
-                cell.textBubbleView.backgroundColor = UIColor.rgb(0, green: 137, blue: 249)
+                cell.bubbleImageView.image = ChatLogMessageCell.blueBubbleImage
+                cell.bubbleImageView.tintColor = UIColor.rgb(0, green: 137, blue: 249)
                 cell.messageTextView.textColor = UIColor.whiteColor()
             }
 
@@ -184,6 +186,10 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
 
 class ChatLogMessageCell: BaseCell {
     
+    static let grayBubbleImage = UIImage(named: "bubble_gray")!.resizableImageWithCapInsets(UIEdgeInsetsMake(22, 26, 22, 26)).imageWithRenderingMode(.AlwaysTemplate)
+    
+    static let blueBubbleImage = UIImage(named: "bubble_blue")!.resizableImageWithCapInsets(UIEdgeInsetsMake(22, 26, 22, 26)).imageWithRenderingMode(.AlwaysTemplate)
+    
     let messageTextView: UITextView = {
         let textView = UITextView()
         textView.font = UIFont.systemFontOfSize(18)
@@ -196,7 +202,7 @@ class ChatLogMessageCell: BaseCell {
     
     let textBubbleView: UIView = {
        let view = UIView()
-        view.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        //view.backgroundColor = UIColor(white: 0.95, alpha: 1)
         view.layer.cornerRadius = 15
         view.layer.masksToBounds = true
         return view
@@ -207,6 +213,13 @@ class ChatLogMessageCell: BaseCell {
         imageView.contentMode = .ScaleAspectFill
         imageView.layer.cornerRadius = 15
         imageView.layer.masksToBounds = true
+        return imageView
+    }()
+    
+    let bubbleImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = ChatLogMessageCell.grayBubbleImage
+        imageView.tintColor = UIColor(white: 0.90, alpha: 1)
         return imageView
     }()
     
@@ -221,7 +234,10 @@ class ChatLogMessageCell: BaseCell {
         addConstraintsWithFormat("H:|-8-[v0(30)]", views: profileImageView)
         addConstraintsWithFormat("V:[v0(30)]|", views: profileImageView)
         
-        profileImageView.backgroundColor = UIColor.redColor()
+        textBubbleView.addSubview(bubbleImageView)
+        
+        textBubbleView.addConstraintsWithFormat("H:|[v0]|", views: bubbleImageView)
+        textBubbleView.addConstraintsWithFormat("V:|[v0]|", views: bubbleImageView)
         
         //Initial constraints for the cells
         /*
