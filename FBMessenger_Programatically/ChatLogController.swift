@@ -35,12 +35,14 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         return textField
     }()
     
-    let sendButton: UIButton = {
+    lazy var sendButton: UIButton = {
         let button = UIButton(type: .System)
         button.setTitle("Send", forState: .Normal)
         let titleColor = UIColor.rgb(0, green: 139, blue: 249)
         button.setTitleColor(titleColor, forState: .Normal)
         button.titleLabel?.font = UIFont.boldSystemFontOfSize(16)
+        
+        button.addTarget(self, action: #selector(handleSend), forControlEvents: .TouchUpInside)
         return button
     }()
     
@@ -66,6 +68,10 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleKeyBoardNotification), name: UIKeyboardWillShowNotification, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleKeyBoardNotification), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func handleSend() {
+        
     }
     
     private func setupInputComponents() {
@@ -125,7 +131,7 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         
         cell.messageTextView.text = messages?[indexPath.item].text
         
-        if let messageText = messages?[indexPath.item].text, profileImageName =  messages?[indexPath.item].friend?.profileImageName{
+        if let message = messages?[indexPath.item], messageText = message.text, profileImageName =  message.friend?.profileImageName{
             
             cell.profileImageView.image = UIImage(named: profileImageName)
             //let size = CGSizeMake(view.frame.width, 1000)
@@ -133,8 +139,21 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
             let options = NSStringDrawingOptions.UsesFontLeading.union(.UsesLineFragmentOrigin)
             let estimatedFrame = NSString(string: messageText).boundingRectWithSize(size, options: options, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(18)], context: nil)
             
-            cell.messageTextView.frame = CGRectMake(48 + 8, 0, estimatedFrame.width + 16, estimatedFrame.height + 20)
-            cell.textBubbleView.frame = CGRectMake(48, 0, estimatedFrame.width + 16 + 8, estimatedFrame.height + 20)
+            if !message.isSender!.boolValue {
+                cell.messageTextView.frame = CGRectMake(48 + 8, 0, estimatedFrame.width + 16, estimatedFrame.height + 20)
+                cell.textBubbleView.frame = CGRectMake(48, 0, estimatedFrame.width + 16 + 8, estimatedFrame.height + 20)
+                cell.profileImageView.hidden = false
+                
+                cell.textBubbleView.backgroundColor = UIColor(white: 0.95, alpha: 1)
+            }
+            else {
+                cell.messageTextView.frame = CGRectMake(view.frame.width - estimatedFrame.width - 16 - 16, 0, estimatedFrame.width + 16, estimatedFrame.height + 20)
+                cell.textBubbleView.frame = CGRectMake(view.frame.width - estimatedFrame.width - 16 - 8 - 16, 0, estimatedFrame.width + 16 + 8, estimatedFrame.height + 20)
+                
+                cell.profileImageView.hidden = true
+                
+                cell.textBubbleView.backgroundColor = UIColor.rgb(0, green: 137, blue: 249)
+            }
 
         }
         
