@@ -51,6 +51,8 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Simulate", style: .Plain, target: self, action: #selector(simulate))
+        
         tabBarController?.tabBar.hidden = true
         collectionView?.backgroundColor = UIColor.whiteColor()
         
@@ -72,6 +74,49 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     
     func handleSend() {
         
+        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = delegate.managedObjectContext
+        
+        let message = FriendsController.createMessageWithText("Here a text message sent minutes ago...", friend: friend!, minutesAgo: 0, context: context, isSender: true)
+        
+        do {
+            try context.save()
+            
+            messages?.append(message)
+            
+            let item = messages!.count - 1
+            let insertionIndexPath = NSIndexPath(forRow: item, inSection: 0)
+            
+            collectionView?.insertItemsAtIndexPaths([insertionIndexPath])
+            collectionView?.scrollToItemAtIndexPath(insertionIndexPath, atScrollPosition: .Bottom, animated: true)
+            inputTextField.text = nil
+            
+        } catch let err {
+            print(err)
+        }
+    }
+    
+    func simulate() {
+        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = delegate.managedObjectContext
+        
+        let message = FriendsController.createMessageWithText("No puede ser vacio", friend: friend!, minutesAgo: 2, context: context)
+        
+        do {
+            try context.save()
+            
+            messages?.append(message)
+            
+            messages = messages?.sort({$0.date!.compare($1.date!) == .OrderedAscending})
+            
+            if let item = messages?.indexOf(message) {
+                let receivingIndexPath = NSIndexPath(forItem: item, inSection: 0)
+                collectionView?.insertItemsAtIndexPaths([receivingIndexPath])
+            }
+            
+        } catch let err {
+            print(err)
+        }
     }
     
     private func setupInputComponents() {
