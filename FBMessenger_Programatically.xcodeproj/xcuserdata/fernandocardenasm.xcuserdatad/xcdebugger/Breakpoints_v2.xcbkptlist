@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FBMessenger_Programatically/ChatLogController.swift"
-            timestampString = "492898556.547752"
+            timestampString = "492952609.354082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
             landmarkName = "bubbleImageView"
             landmarkType = "19">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FBMessenger_Programatically/ChatLogController.swift"
-            timestampString = "492898556.547752"
+            timestampString = "492952609.354082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
+            startingLineNumber = "307"
+            endingLineNumber = "307"
             landmarkName = "bubbleImageView"
             landmarkType = "19">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FBMessenger_Programatically/ChatLogController.swift"
-            timestampString = "492898556.547752"
+            timestampString = "492952609.354082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "handleKeyBoardNotification(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FBMessenger_Programatically/ChatLogController.swift"
-            timestampString = "491337490.225217"
+            timestampString = "492951835.865692"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "sendButton"
             landmarkType = "19">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FBMessenger_Programatically/ChatLogController.swift"
-            timestampString = "492898556.547752"
+            timestampString = "492952609.354082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
             landmarkName = "messageTextView"
             landmarkType = "19">
          </BreakpointContent>
