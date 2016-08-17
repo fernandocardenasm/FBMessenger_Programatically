@@ -2,7 +2,7 @@
 //  Friend+CoreDataProperties.swift
 //  FBMessenger_Programatically
 //
-//  Created by Fernando Cardenas on 23/07/16.
+//  Created by Fernando Cardenas on 17/08/16.
 //  Copyright © 2016 Fernando. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -17,5 +17,6 @@ extension Friend {
     @NSManaged var name: String?
     @NSManaged var profileImageName: String?
     @NSManaged var messages: NSSet?
+    @NSManaged var lastMessage: Message?
 
 }

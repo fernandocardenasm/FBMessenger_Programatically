@@ -18,11 +18,7 @@ extension FriendsController {
         let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
         
         if let context = delegate?.managedObjectContext {
-            let mark = NSEntityDescription.insertNewObjectForEntityForName("Friend", inManagedObjectContext: context) as! Friend
-            mark.name = "Mark Zuckerberg"
-            mark.profileImageName = "zuckprofile"
-            
-            FriendsController.createMessageWithText("Hello, my name is Mark. Nice to meet you.", friend: mark, minutesAgo: 2, context: context)
+
             
             createSteveMessagesWithContext(context)
             
@@ -54,7 +50,6 @@ extension FriendsController {
             //messages = [message, messageSteve]
         }
         
-        loadData()
         
     }
     
@@ -90,38 +85,12 @@ extension FriendsController {
         message.text = text
         message.date = NSDate().dateByAddingTimeInterval(-minutesAgo * 60)
         message.isSender = NSNumber(bool: isSender)
+        
+        friend.lastMessage = message
+        
         return message
     }
     
-    func loadData() {
-        let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
-        
-        if let context = delegate?.managedObjectContext {
-            
-            if let friends = fetchFriends() {
-                
-                messages = [Message]()
-                
-                for friend in friends {
-                    let fetchRequest = NSFetchRequest(entityName: "Message")
-                    
-                    //We want to get only the last message
-                    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
-                    fetchRequest.predicate = NSPredicate(format: "friend.name = %@", friend.name!)
-                    fetchRequest.fetchLimit = 1
-                    do {
-                        let fetchedMessages = try(context.executeFetchRequest(fetchRequest)) as? [Message]
-                        messages?.appendContentsOf(fetchedMessages!)
-                    }catch let err {
-                        print(err)
-                    }
-                }
-                
-                messages = messages?.sort({$0.date!.compare($1.date!) == .OrderedDescending})
-            }
-            
-        }
-    }
     
     func clearData() {
         let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
@@ -151,22 +120,54 @@ extension FriendsController {
         }
     }
     
-    private func fetchFriends() -> [Friend]? {
-        let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
-        
-        if let context = delegate?.managedObjectContext {
-            
-            do {
-                let fetchRequest = NSFetchRequest(entityName: "Friend")
-                return try context.executeFetchRequest(fetchRequest) as? [Friend]
-                
-                
-            }catch let err {
-                print(err)
-            }
-            
-        }
-        return nil
+//    func loadData() {
+//        let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
+//        
+//        if let context = delegate?.managedObjectContext {
+//            
+//            if let friends = fetchFriends() {
+//                
+//                messages = [Message]()
+//                
+//                for friend in friends {
+//                    let fetchRequest = NSFetchRequest(entityName: "Message")
+//                    
+//                    //We want to get only the last message
+//                    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+//                    fetchRequest.predicate = NSPredicate(format: "friend.name = %@", friend.name!)
+//                    fetchRequest.fetchLimit = 1
+//                    do {
+//                        let fetchedMessages = try(context.executeFetchRequest(fetchRequest)) as? [Message]
+//                        messages?.appendContentsOf(fetchedMessages!)
+//                    }catch let err {
+//                        print(err)
+//                    }
+//                }
+//                
+//                messages = messages?.sort({$0.date!.compare($1.date!) == .OrderedDescending})
+//            }
+//            
+//        }
+//    }
+    
 
-    }
+    
+//    private func fetchFriends() -> [Friend]? {
+//        let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
+//        
+//        if let context = delegate?.managedObjectContext {
+//            
+//            do {
+//                let fetchRequest = NSFetchRequest(entityName: "Friend")
+//                return try context.executeFetchRequest(fetchRequest) as? [Friend]
+//                
+//                
+//            }catch let err {
+//                print(err)
+//            }
+//            
+//        }
+//        return nil
+//
+//    }
 }

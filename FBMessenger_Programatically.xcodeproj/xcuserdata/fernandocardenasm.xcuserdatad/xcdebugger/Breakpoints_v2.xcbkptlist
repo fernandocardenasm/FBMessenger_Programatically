@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FBMessenger_Programatically/FriendsControllerHelper.swift"
-            timestampString = "491343122.221675"
+            timestampString = "493161142.700208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "createSteveMessagesWithContext(_:)"
             landmarkType = "5">
          </BreakpointContent>
